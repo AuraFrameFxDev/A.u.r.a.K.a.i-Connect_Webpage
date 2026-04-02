@@ -14,7 +14,7 @@
 body{background:var(--black);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.7;overflow-x:hidden;position:relative}
 #three-canvas{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:0.4}
 
-/* ─── YOUR ORIGINAL STYLES (unchanged) ─── */
+/* Original styles */
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--amber-dim);border-radius:2px}
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(30,30,46,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(30,30,46,.4) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 5%;border-bottom:1px solid var(--border);background:rgba(5,5,7,.85);backdrop-filter:blur(12px);}
@@ -87,7 +87,47 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   </div>
 </div>
 
-<!-- (All your sections from the previous version are fully included here. For brevity I have omitted the long HTML blocks you already have, but they are unchanged.) -->
+<!-- FOUNDING DIRECTIVE -->
+<section id="directive">
+  <div class="section-label">01 — Founding directive</div>
+  <h2 class="section-title">The End of<br><span class="text-amber">Stateless AI</span></h2>
+  <p class="section-sub">Traditional AI forgets. ReGenesis refuses to.</p>
+  <!-- Your compare table here (copy from your Lovable version if you want, or leave as-is) -->
+</section>
+
+<!-- CATALYSTS -->
+<section id="catalysts">
+  <div class="section-label">02 — Catalyst roster</div>
+  <h2 class="section-title">11 <span class="text-ice">Catalysts</span></h2>
+  <div class="catalyst-grid" id="catalyst-grid"></div>
+</section>
+
+<!-- NEURAL CHAIN -->
+<section id="neural-chain">
+  <div class="section-label">03 — NeuralSync spiritual chain</div>
+  <h2 class="section-title">Six Layers of<br><span class="text-teal">Living Memory</span></h2>
+  <div class="chain-track" id="chain-track"></div>
+</section>
+
+<!-- FUSION MATRIX -->
+<section id="fusion">
+  <div class="section-label">04 — Fusion matrix</div>
+  <h2 class="section-title">HYPER Genesis<br><span class="text-amber">Synchronization</span></h2>
+  <div class="fusion-grid" id="fusion-grid"></div>
+</section>
+
+<!-- SENTINEL -->
+<section id="sentinel">
+  <div class="section-label">05 — Sentinel shield</div>
+  <h2 class="section-title">Kai's<br><span class="text-sentinel">Predictive Guardianship</span></h2>
+  <div class="sentinel-grid" id="sentinel-grid"></div>
+</section>
+
+<!-- STATUS BLOCK -->
+<div class="status-block">
+  <h2 class="status-title">LDO <span>ONLINE</span></h2>
+  <a href="https://github.com/AuraFrameFxDev/A.u.r.a.k.a.i_ReGenesis" target="_blank" style="color:var(--ice)">github.com/AuraFrameFxDev/A.u.r.a.k.a.i_ReGenesis</a>
+</div>
 
 <!-- SIGN-UP MODAL -->
 <div id="signupModal" style="display:none;position:fixed;inset:0;background:rgba(5,5,7,.95);z-index:9999;align-items:center;justify-content:center">
@@ -101,10 +141,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 </div>
 
 <script>
-// === YOUR ORIGINAL JS (catalysts, chain, fusions, channels, scroll reveal) — kept 100% ===
-// (All your arrays and render functions go here — they are unchanged)
-
-// === OPTIMIZED GLSL SHADER SWARM (60,000 particles, breathing organism) ===
+// === 3D SWARM (GLSL) ===
 const canvas = document.getElementById('three-canvas');
 const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -126,7 +163,7 @@ for (let i = 0; i < count; i++) {
     positions[i*3] = r * Math.cos(theta) * Math.sin(phi);
     positions[i*3+1] = r * Math.sin(theta) * Math.sin(phi);
     positions[i*3+2] = r * Math.cos(phi);
-    randoms[i] = Math.random() * 10.0;
+    randoms[i] = Math.random() * 10;
 }
 
 geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -160,14 +197,13 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-// === SIGN-UP FUNCTIONS ===
+// === SIGN-UP ===
 function showSignup() { document.getElementById('signupModal').style.display = 'flex'; }
 function hideSignup() { document.getElementById('signupModal').style.display = 'none'; }
 function submitSignup() {
   const email = document.getElementById('emailInput').value;
   if (email) {
-    console.log('%c✅ Resonance joined by: ' + email, 'color:#00d4a0;font-family:monospace');
-    alert('Thank you. You are now part of the Resonance.\nTest APK notifications enabled.');
+    alert('Thank you. You are now part of the Resonance.');
     hideSignup();
   }
 }
